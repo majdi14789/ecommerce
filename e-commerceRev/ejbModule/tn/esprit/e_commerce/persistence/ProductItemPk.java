@@ -12,14 +12,14 @@ public class ProductItemPk implements Serializable {
 
 	private int idParticularVendor;
 	private int idProduct;
-	private Date dateSupplied;
+    private Date 	dateSupplied;
 	
 	
 	private static final long serialVersionUID = -1173754073386632747L;
 
 
 	public int getIdParticularVendor() {
-		return idParticularVendor;
+		return idParticularVendor; 
 	}
 
 

@@ -77,18 +77,26 @@ public class Product implements Serializable {
 	public void setPromotion(Promotion promotion) {
 		this.promotion = promotion;
 	}
+	
+	@OneToMany(mappedBy="product")
 	public List<OrderItem> getOrderItems() {
 		return orderItems;
 	}
 	public void setOrderItems(List<OrderItem> orderItems) {
 		this.orderItems = orderItems;
 	}
+	
+	
+	@OneToMany(mappedBy="product")
 	public List<Review> getReviews() {
 		return reviews;
 	}
 	public void setReviews(List<Review> reviews) {
 		this.reviews = reviews;
 	}
+	
+	
+	@OneToMany(mappedBy="product")
 	public List<Recommendation> getRecommendations() {
 		return recommendations;
 	}

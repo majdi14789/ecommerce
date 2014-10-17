@@ -22,7 +22,7 @@ public class Orders implements Serializable {
 	private boolean stateOrder;
 	private Address deleveryAddress;
 	private String paymentMethod;
-	List<OrderItem> orderItems;
+	private List<OrderItem> orderItems;
 	private Customer customer;
 	private Commision commision;
 	private static final long serialVersionUID = 1L;
@@ -74,6 +74,8 @@ public class Orders implements Serializable {
 	public void setTotalAmount(float totalAmount) {
 		this.totalAmount = totalAmount;
 	}
+	
+	@OneToMany(mappedBy="order")
 	public List<OrderItem> getOrderItems() {
 		return orderItems;
 	}
