@@ -7,6 +7,7 @@ import javax.ejb.Local;
 
 import tn.esprit.e_commerce.persistence.Picture;
 import tn.esprit.e_commerce.persistence.Product;
+import tn.esprit.e_commerce.persistence.StatistiqueProduct;
 
 @Local
 public interface GestionProductLocal {
@@ -32,4 +33,10 @@ public interface GestionProductLocal {
     
 	List<Product> findProductByAllCriteria(String categoryName,String productName,float priceDebut,float priceFin, Date date,boolean inDiscount );
 	
+	
+	//*********** salma**************
+	
+	
+	List<StatistiqueProduct> findOldestProduct();
+
 }

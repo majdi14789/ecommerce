@@ -12,6 +12,8 @@ import javax.persistence.TemporalType;
 
 import tn.esprit.e_commerce.persistence.Picture;
 import tn.esprit.e_commerce.persistence.Product;
+import tn.esprit.e_commerce.persistence.Promotion;
+import tn.esprit.e_commerce.persistence.StatistiqueProduct;
 
 /**
  * Session Bean implementation class GestionProduct
@@ -163,6 +165,26 @@ public class GestionProduct implements GestionProductRemote, GestionProductLocal
 
 	        return list;
 	    }
+
+	@Override
+	public List<StatistiqueProduct> findOldestProduct() {
+		Query query = em
+				.createQuery("select p,p.promotion from Product p  left join p.promotion pro ORDER BY  (p.date) ASC").setMaxResults(3);
+			//	.createQuery("select p from Product p  ORDER BY  (p.date) ASC").setMaxResults(3);
+		 
+		List<Object[]> Presult = query.getResultList();
+
+		ArrayList<StatistiqueProduct> ls = new ArrayList();
+
+		for (Object[] result : Presult) {
+
+			StatistiqueProduct s = new StatistiqueProduct();
+			s.setProduct((Product)result[0]);
+			s.setPromotion( (Promotion) result[1]);
+			ls.add(s);
+		}
+		return ls;
+}
 
 
 
