@@ -150,12 +150,6 @@ public class Product implements Serializable {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	@ManyToOne
-	public Promotion getDiscount() {
-		return promotion;
-	}
-	public void setDiscount(Promotion promotion) {
-		this.promotion = promotion;
-	}
+	
    
 }
