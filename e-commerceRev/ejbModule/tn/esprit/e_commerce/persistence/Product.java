@@ -13,7 +13,7 @@ import javax.persistence.*;
  */
 
 // ye majdi ye chbaya7
-
+//haaaaa
 @Entity
 
 public class Product implements Serializable {
