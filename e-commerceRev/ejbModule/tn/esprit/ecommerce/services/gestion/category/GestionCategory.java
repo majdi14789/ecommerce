@@ -51,4 +51,20 @@ public class GestionCategory implements
 		return query.getResultList();
 	}
 
+	
+	@Override
+	public Category findCategoryByNameSaf(String nomCategory) {
+		Query query = entityManager.createQuery("select c from Category c where c.name=:name");
+		query.setParameter("name", nomCategory);
+		return (Category) query.getSingleResult();
+	}
+
+	
+	@Override
+	public List<Category> findCategoryByName(String name) {
+		Query query = entityManager.createQuery("select c from Category c where c.name=:name");
+		query.setParameter("name", name);
+		return query.getResultList();
+	}
+
 }

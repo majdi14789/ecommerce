@@ -32,6 +32,9 @@ public class User implements Serializable {
 	private String email;
 	private Picture picture;
 	private char sexe;
+	
+	private List<Reclamation> reclamations; 
+	
 	private static final long serialVersionUID = 1L;
 
 	public User() {
@@ -116,6 +119,14 @@ public class User implements Serializable {
 	}
 	public void setSexe(char sexe) {
 		this.sexe = sexe;
+	}
+	
+	@OneToMany(mappedBy="user")
+	public List<Reclamation> getReclamations() {
+		return reclamations;
+	}
+	public void setReclamations(List<Reclamation> reclamations) {
+		this.reclamations = reclamations;
 	}
 	
 	

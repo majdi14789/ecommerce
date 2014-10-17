@@ -17,4 +17,10 @@ public interface GestionCategoryRemote {
 	 Category findCategoryById(int idCategory);
 
 	 List<Category> findAllCategory();
+
+	 Category findCategoryByNameSaf(String nomCategory);
+
+     public List<Category> findCategoryByName(String name);
+
+
 }
