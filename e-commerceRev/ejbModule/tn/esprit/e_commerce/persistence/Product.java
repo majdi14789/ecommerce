@@ -11,6 +11,9 @@ import javax.persistence.*;
  * Entity implementation class for Entity: Product
  *
  */
+
+// ye majdi ye chbaya7
+
 @Entity
 
 public class Product implements Serializable {
@@ -145,7 +148,7 @@ public class Product implements Serializable {
 	}
 	@ManyToOne
 	public Category getCategory() {
-		return category;
+		return category; 
 	}
 	public void setCategory(Category category) {
 		this.category = category;
