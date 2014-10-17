@@ -41,6 +41,9 @@ public class Product implements Serializable {
 	public Product() {
 		super();
 	}   
+	
+	
+	
 	@Id    
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getIdProduct() {

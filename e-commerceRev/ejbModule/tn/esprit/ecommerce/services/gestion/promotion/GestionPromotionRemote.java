@@ -1,6 +1,5 @@
 package tn.esprit.ecommerce.services.gestion.promotion;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Remote;
@@ -9,22 +8,20 @@ import tn.esprit.e_commerce.persistence.Promotion;
 
 @Remote
 public interface GestionPromotionRemote {
-	boolean addDiscount(Promotion promotion);
+	boolean addPromotion(Promotion promotion);
 
-	 boolean updatediscount(Promotion promotion);
+	boolean updatePromotion(Promotion promotion);
 
-	 boolean deleteDiscount(Promotion promotion);
+	boolean deletePromotion(Promotion promotion);
 
-	 Promotion findDiscountById(int idDiscount);
+	Promotion findPromotionById(int idPromotion);
 
-	 List<Promotion> findAllDiscount();
-	 
-	 List<Promotion> findDiscountByStartDate(Date  date);
+	List<Promotion> findAllPromotions();
+	
+	
+	
+	//********************* safouen *********************
+	
+	Promotion findPromotionByName(String nomPromotion);
 
-     List<Promotion> findDiscountByEndDate(Date  date);
-     
-     List<Promotion> findDiscountByRate(float rate);
-     List<Promotion> findDiscountByDescription(String description);
-     List<Promotion> findDiscountByAllCriteria(String description,
-  			float rate, Date startDate,Date endDate);
 }
